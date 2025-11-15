@@ -1,0 +1,56 @@
+.stats-summary-cards {
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+  }
+
+  &__spinner {
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+    color: var(--muted-foreground);
+  }
+
+  &__error {
+    text-align: center;
+    color: var(--muted-foreground);
+    padding: 32px 0;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 16px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &--approved {
+      color: #16a34a;
+    }
+
+    &--rejected {
+      color: #dc2626;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

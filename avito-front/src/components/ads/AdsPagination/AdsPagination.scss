@@ -1,0 +1,13 @@
+.ads-pagination {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__info {
+    text-align: center;
+    font-size: 14px;
+    color: #4b5563;
+  }
+}

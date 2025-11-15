@@ -1,0 +1,90 @@
+.ad-card {
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: 8px;
+
+    @media (prefers-color-scheme: dark) {
+      color: #60a5fa;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #4b5563;
+
+    @media (prefers-color-scheme: dark) {
+      color: #9ca3af;
+    }
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.ad-item {
+  &__wrapper {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3),
+                  0 1px 2px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    // Эффект при наведении
+    &:hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15),
+                  0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+
+      @media (prefers-color-scheme: dark) {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4),
+                    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    // Активное состояние (при клике)
+    &:active {
+      transform: translateY(0) scale(0.99);
+    }
+  }
+
+  &--selected &__wrapper {
+    box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.25),
+                0 2px 6px -1px rgba(37, 99, 235, 0.15),
+                0 0 0 2px rgba(37, 99, 235, 0.2);
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 4px 12px -2px rgba(96, 165, 250, 0.3),
+                  0 2px 6px -1px rgba(96, 165, 250, 0.2),
+                  0 0 0 2px rgba(96, 165, 250, 0.3);
+    }
+  }
+}

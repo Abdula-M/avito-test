@@ -1,0 +1,1 @@
+export { AdCardSkeleton } from './AdCardSkeleton'

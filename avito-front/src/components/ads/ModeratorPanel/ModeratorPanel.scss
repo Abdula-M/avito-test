@@ -1,0 +1,87 @@
+.moderator-panel {
+  &__container {
+    position: relative;
+    z-index: 10;
+    border: 2px solid #3b82f6;
+    background-color: rgba(var(--muted-rgb, 241 245 249), 0.3);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #2563eb;
+      background-color: rgba(23, 37, 84, 0.3);
+    }
+  }
+
+  &__header {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--foreground);
+  }
+
+  &__description {
+    font-size: 14px;
+    color: var(--muted-foreground);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    color: white;
+
+    &--approve {
+      background-color: #16a34a;
+
+      &:hover:not(:disabled) {
+        background-color: #15803d;
+      }
+    }
+
+    &--reject {
+      background-color: #dc2626;
+
+      &:hover:not(:disabled) {
+        background-color: #b91c1c;
+      }
+    }
+
+    &--draft {
+      background-color: #ca8a04;
+
+      &:hover:not(:disabled) {
+        background-color: #a16207;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

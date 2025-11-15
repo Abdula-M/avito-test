@@ -1,0 +1,34 @@
+.activity-chart {
+  &__loading,
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+  }
+
+  &__spinner {
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+    color: var(--muted-foreground);
+  }
+
+  &__empty-text {
+    color: var(--muted-foreground);
+  }
+
+  &__container {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
