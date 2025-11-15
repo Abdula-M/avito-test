@@ -65,7 +65,7 @@ export const AdCard = ({ ad, isSelected = false, onSelect, selectionMode = false
 
                 <ItemMedia className="w-32 h-32 flex-shrink-0">
                     <ImageWithLoader
-                        src={ad.images[0]}
+                        src={ad.images?.[0] || ''}
                         alt={ad.title}
                         className="w-full h-full object-cover rounded"
                     />

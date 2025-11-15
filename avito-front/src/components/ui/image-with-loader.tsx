@@ -15,6 +15,13 @@ export const ImageWithLoader = ({ src, alt, className = '' }: ImageWithLoaderPro
     const [hasTimedOut, setHasTimedOut] = useState(false);
 
     useEffect(() => {
+        // Проверка на пустой или отсутствующий src
+        if (!src) {
+            setIsLoading(false);
+            setHasError(true);
+            return;
+        }
+
         // Сброс состояний при изменении src
         setIsLoading(true);
         setHasError(false);
@@ -58,13 +65,15 @@ export const ImageWithLoader = ({ src, alt, className = '' }: ImageWithLoaderPro
                     <ImageOff className="w-12 h-12 text-muted-foreground/50" />
                 </div>
             ) : (
-                <img
-                    src={src}
-                    alt={alt}
-                    className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-                    onLoad={handleLoad}
-                    onError={handleError}
-                />
+                src && (
+                    <img
+                        src={src}
+                        alt={alt}
+                        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+                        onLoad={handleLoad}
+                        onError={handleError}
+                    />
+                )
             )}
         </div>
     );
