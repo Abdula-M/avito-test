@@ -8,6 +8,7 @@ import type { Advertisement } from "@/api/types/ads.types"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import { ImageWithLoader } from "@/components/ui/image-with-loader"
 import { Item, ItemActions, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item"
 import { getPriorityBadge, getStatusBadge } from "@/utils/badges"
 import { formatShortDate } from "@/utils/dateFormat"
@@ -63,8 +64,8 @@ export const AdCard = ({ ad, isSelected = false, onSelect, selectionMode = false
                 )}
 
                 <ItemMedia className="w-32 h-32 flex-shrink-0">
-                    <img
-                        src={ad.images[0] || 'https://via.placeholder.com/150'}
+                    <ImageWithLoader
+                        src={ad.images[0]}
                         alt={ad.title}
                         className="w-full h-full object-cover rounded"
                     />

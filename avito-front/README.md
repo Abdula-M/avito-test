@@ -176,7 +176,9 @@
 
 Docker автоматически поднимет и фронтенд, и бэкенд в изолированных контейнерах.
 
-#### Шаг 1: Проверьте установку Docker
+#### Шаг 1: Проверьте установку и запуск Docker
+
+**1. Проверьте, что Docker установлен:**
 
 ```bash
 docker --version
@@ -189,15 +191,33 @@ docker-compose --version
 - Docker 20.10+
 - Docker Compose 2.0+
 
+**2. Убедитесь, что Docker запущен:**
+
+```bash
+docker info
+```
+
+Если команда выполнилась успешно и показывает информацию о Docker - всё в порядке!
+
+Если вы видите ошибку типа "Cannot connect to the Docker daemon", запустите Docker:
+- **macOS/Windows**: Откройте Docker Desktop из Applications/меню Пуск
+- **Linux**: Запустите Docker daemon:
+  ```bash
+  sudo systemctl start docker
+  ```
+
 #### Шаг 2: Клонируйте репозиторий
 
 ```bash
-git clone <URL_репозитория>
+git clone https://github.com/Abdula-M/avito-test
 ```
 
 #### Шаг 3: Перейдите в папку проекта
 
+**Важно:** Сначала нужно перейти в корневую папку `avito-test`, а затем в `avito-front`:
+
 ```bash
+cd avito-test
 cd avito-front
 ```
 
@@ -260,12 +280,15 @@ nvm use 20
 #### Шаг 2: Клонируйте репозиторий
 
 ```bash
-git clone <URL_репозитория>
+git clone https://github.com/Abdula-M/avito-test
 ```
 
 #### Шаг 3: Перейдите в папку проекта
 
+**Важно:** Сначала нужно перейти в корневую папку `avito-test`, а затем в `avito-front`:
+
 ```bash
+cd avito-test
 cd avito-front
 ```
 

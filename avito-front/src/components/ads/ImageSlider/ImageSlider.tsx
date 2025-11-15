@@ -7,6 +7,8 @@ import type { Swiper as SwiperType } from "swiper/types"
 import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
+import { ImageWithLoader } from "@/components/ui/image-with-loader"
+
 interface ImageSliderProps {
     images: string[]
     title: string
@@ -37,7 +39,7 @@ export const ImageSlider = ({ images, title }: ImageSliderProps) => {
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
                         <div className="image-slider__slide">
-                            <img
+                            <ImageWithLoader
                                 src={image}
                                 alt={`${title} - ${index + 1}`}
                             />
@@ -67,7 +69,7 @@ export const ImageSlider = ({ images, title }: ImageSliderProps) => {
                     {images.map((image, index) => (
                         <SwiperSlide key={index} className="image-slider__thumb-slide">
                             <div className="image-slider__thumb">
-                                <img
+                                <ImageWithLoader
                                     src={image}
                                     alt={`${title} thumbnail ${index + 1}`}
                                 />

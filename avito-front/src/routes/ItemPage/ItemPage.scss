@@ -1,5 +1,8 @@
 .item-page {
     margin-top: 1rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 
     &__loading {
         display: flex;
